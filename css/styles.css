@@ -7354,6 +7354,7 @@ textarea.form-control-lg {
 /* rtl:end:remove */
 .text-primary {
   color: #bd5d38 !important;
+  font-weight: 700;
 }
 
 .text-secondary {
