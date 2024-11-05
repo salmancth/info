@@ -24,7 +24,7 @@
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
-  --bs-primary: #bd5d38;
+  --bs-primary: hsl(17, 54%, 48%);
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -61,18 +61,21 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+/* Skill  Bar Styles */
+
 
 .skills-container {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  max-width: 600px;
+  max-width: 960px;
 }
 .skill-box {
   background-color: #fff;
   padding: 20px;
-  width: 120px;
+  width: 280px;
   height: 100px;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,6 +85,33 @@ body {
   transition: transform 0.2s;
 }
 .skill-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Event  Bar Styles */
+
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-width: 960px;
+}
+.event-box {
+  background-color: hsl(17, 54%, 48%);
+  padding: 20px;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: white; 
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+.event-box:hover {
   transform: translateY(-5px);
 }
 
