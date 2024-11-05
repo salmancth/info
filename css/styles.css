@@ -61,6 +61,31 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-width: 600px;
+}
+.skill-box {
+  background-color: #fff;
+  padding: 20px;
+  width: 120px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+.skill-box:hover {
+  transform: translateY(-5px);
+}
+
+
 hr {
   margin: 1rem 0;
   color: inherit;
