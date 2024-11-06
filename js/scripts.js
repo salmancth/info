@@ -32,3 +32,27 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+// List of certificate file names
+const certificateImages = [
+    'HIL_Scratch.jpg',
+    'certificate2.jpg',
+    'certificate3.jpg'
+    // Add more certificates as needed
+  ];
+  
+  // Function to display certificates
+  function displayCertificates() {
+    const gallery = document.getElementById('certificates-gallery');
+  
+    certificateImages.forEach(image => {
+      const imgElement = document.createElement('img');
+      imgElement.src = `certificates/${image}`;
+      imgElement.alt = `Certificate: ${image}`;
+      gallery.appendChild(imgElement);
+    });
+  }
+  
+  // Call the function on page load
+  document.addEventListener('DOMContentLoaded', displayCertificates);
+  

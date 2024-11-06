@@ -88,6 +88,28 @@ body {
   transform: translateY(-5px);
 }
 
+/* Certificate */
+
+.certificates-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.certificates-gallery img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #333;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.certificates-gallery img:hover {
+  transform: scale(1.05);
+}
+
 /* Event  Bar Styles */
 
 .events-container {
