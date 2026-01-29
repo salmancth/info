@@ -326,5 +326,11 @@
             statsObserver.observe(statsSection);
         }
     </script>
+    <!-- At the end of body, load in this order -->
+<script src="assets/js/analytics.js" defer></script>
+<script src="assets/js/translations.js" defer></script>
+<script src="assets/js/gallery.js" defer></script>
+<script src="assets/js/components.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
