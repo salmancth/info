@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical Skills - Salman Yahya">
+    <title>Skills - Salman Yahya</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        :root { --primary: #2563eb; --secondary: #7c3aed; }
+        body { font-family: 'Inter', sans-serif; }
+        .dark { color-scheme: dark; }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    
+    <header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm z-50 border-b border-gray-200 dark:border-gray-800">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">SY</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-800 dark:text-white hidden sm:block">Salman Yahya</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+                    <a href="about.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+                    <a href="experience.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Experience</a>
+                    <a href="education.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Education</a>
+                    <a href="skills.html" class="nav-link font-medium text-blue-600 dark:text-blue-400 font-bold">Skills</a>
+                    <a href="projects.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
+                    <a href="gallery.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Gallery</a>
+                    <a href="index.html#contact" class="btn-primary px-6 py-2 rounded-lg font-semibold text-white transition-all hover:shadow-lg">
+                        Contact
+                    </a>
+                    
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+                
+                <button id="mobile-menu-button" class="md:hidden text-gray-800 dark:text-gray-200 p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-800 pt-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Home</a>
+                    <a href="about.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">About</a>
+                    <a href="experience.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Experience</a>
+                    <a href="education.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Education</a>
+                    <a href="skills.html" class="nav-link font-medium text-blue-600 dark:text-blue-400 font-bold py-2">Skills</a>
+                    <a href="projects.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Projects</a>
+                    <a href="gallery.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Gallery</a>
+                    <a href="index.html#contact" class="btn-primary px-6 py-3 rounded-lg font-semibold text-white text-center mt-4">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-blue-900/20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Technical Skills</h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Comprehensive expertise spanning automation, software development, IT infrastructure, and embedded systems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Skills Categories -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    
+                    <!-- Automation & Embedded Skills -->
+                    <div class="skill-category bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+                        <div class="flex items-center mb-8">
+                            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-industry text-blue-600 dark:text-blue-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold">Automation & Embedded</h2>
+                                <p class="text-gray-600 dark:text-gray-400">Industrial automation and embedded systems</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">PLC Programming</span>
+                                    <span class="text-blue-600 font-bold">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 90%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    Siemens, CODESYS, Allen-Bradley, SCADA systems
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">MATLAB/Simulink</span>
+                                    <span class="text-blue-600 font-bold">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    Simulation, control systems, signal processing
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">Embedded C/C++</span>
+                                    <span class="text-blue-600 font-bold">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 80%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    Microcontrollers, RTOS, firmware development
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">CST Studio Suite</span>
+                                    <span class="text-blue-600 font-bold">75%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    RF design, electromagnetic simulation
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Software Development Skills -->
+                    <div class="skill-category bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+                        <div class="flex items-center mb-8">
+                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-code text-purple-600 dark:text-purple-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold">Software Development</h2>
+                                <p class="text-gray-600 dark:text-gray-400">Full-stack and application development</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">C# / .NET</span>
+                                    <span class="text-purple-600 font-bold">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-purple-500 to-pink-600 h-3 rounded-full" style="width: 88%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    ASP.NET Core, Entity Framework, Blazor
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">Python</span>
+                                    <span class="text-purple-600 font-bold">75%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-purple-500 to-pink-600 h-3 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    Data analysis, automation scripts, web scraping
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">HTML/CSS/JavaScript</span>
+                                    <span class="text-purple-600 font-bold">70%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-purple-500 to-pink-600 h-3 rounded-full" style="width: 70%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    Modern web development, responsive design
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">Database Systems</span>
+                                    <span class="text-purple-600 font-bold">72%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-purple-500 to-pink-600 h-3 rounded-full" style="width: 72%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    SQL Server, PostgreSQL, Entity Framework
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- IT & Infrastructure Skills -->
+                    <div class="skill-category bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+                        <div class="flex items-center mb-8">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-server text-green-600 dark:text-green-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold">IT & Infrastructure</h2>
+                                <p class="text-gray-600 dark:text-gray-400">System administration and cloud technologies</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">Windows Server</span>
+                                    <span class="text-green-600 font-bold">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-green-500 to-teal-600 h-3 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    Active Directory, Group Policy, DNS, DHCP
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">PowerShell</span>
+                                    <span class="text-green-600 font-bold">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-green-500 to-teal-600 h-3 rounded-full" style="width: 80%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    Automation scripts, system administration
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">Linux/Unix</span>
+                                    <span class="text-green-600 font-bold">75%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-green-500 to-teal-600 h-3 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    System administration, shell scripting
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">Cloud Technologies</span>
+                                    <span class="text-green-600 font-bold">70%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-green-500 to-teal-600 h-3 rounded-full" style="width: 70%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    AWS, Docker, containerization
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools & Methodologies -->
+                    <div class="skill-category bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+                        <div class="flex items-center mb-8">
+                            <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-tools text-orange-600 dark:text-orange-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold">Tools & Methodologies</h2>
+                                <p class="text-gray-600 dark:text-gray-400">Development tools and professional practices</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">Git & Version Control</span>
+                                    <span class="text-orange-600 font-bold">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-orange-500 to-red-600 h-3 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    GitHub, GitLab, branching strategies
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">Agile/Scrum</span>
+                                    <span class="text-orange-600 font-bold">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-orange-500 to-red-600 h-3 rounded-full" style="width: 80%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    Sprint planning, backlog management
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">Visual Studio/VS Code</span>
+                                    <span class="text-orange-600 font-bold">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-orange-500 to-red-600 h-3 rounded-full" style="width: 90%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    IDE proficiency, debugging, extensions
+                                </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700 dark:text-gray-300">Technical Documentation</span>
+                                    <span class="text-orange-600 font-bold">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-orange-500 to-red-600 h-3 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                                    System documentation, API docs, manuals
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Skill Tags Cloud -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Technologies & Tools</h2>
+                    
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+                        <div class="flex flex-wrap gap-3 justify-center">
+                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-4 py-2 rounded-full font-medium">PLC Programming</span>
+                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-4 py-2 rounded-full font-medium">CODESYS</span>
+                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-4 py-2 rounded-full font-medium">SCADA</span>
+                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-4 py-2 rounded-full font-medium">Siemens</span>
+                            <span class="skill-tag bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-4 py-2 rounded-full font-medium">C#</span>
+                            <span class="skill-tag bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-4 py-2 rounded-full font-medium">.NET</span>
+                            <span class="skill-tag bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-4 py-2 rounded-full font-medium">Blazor</span>
+                            <span class="skill-tag bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-4 py-2 rounded-full font-medium">Entity Framework</span>
+                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-4 py-2 rounded-full font-medium">Python</span>
+                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-4 py-2 rounded-full font-medium">MATLAB</span>
+                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-4 py-2 rounded-full font-medium">CST Studio</span>
+                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-4 py-2 rounded-full font-medium">PowerShell</span>
+                            <span class="skill-tag bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-4 py-2 rounded-full font-medium">Windows Server</span>
+                            <span class="skill-tag bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-4 py-2 rounded-full font-medium">Active Directory</span>
+                            <span class="skill-tag bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-4 py-2 rounded-full font-medium">Linux</span>
+                            <span class="skill-tag bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-4 py-2 rounded-full font-medium">AWS</span>
+                            <span class="skill-tag bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 px-4 py-2 rounded-full font-medium">Docker</span>
+                            <span class="skill-tag bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 px-4 py-2 rounded-full font-medium">Git</span>
+                            <span class="skill-tag bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 px-4 py-2 rounded-full font-medium">SQL Server</span>
+                            <span class="skill-tag bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 px-4 py-2 rounded-full font-medium">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Competencies -->
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-blue-900/20 rounded-2xl p-8 mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Professional Competencies</h2>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-lightbulb text-blue-600 dark:text-blue-400 text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Problem Solving</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                Analytical approach to complex technical challenges
+                            </p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-project-diagram text-purple-600 dark:text-purple-400 text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">System Integration</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                Bridging hardware and software systems
+                            </p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-book text-green-600 dark:text-green-400 text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Continuous Learning</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                Staying updated with emerging technologies
+                            </p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-users text-orange-600 dark:text-orange-400 text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Collaboration</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                Effective teamwork and communication
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-xl font-bold text-white mb-2">Salman Yahya</p>
+                    <p class="text-gray-400">&copy; <span id="current-year">2025</span> All rights reserved.</p>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="https://linkedin.com/in/salman-yahya" target="_blank" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/salmancth" target="_blank" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="mailto:salmanyahya@outlook.com" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Gothenburg, Sweden
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-sm text-gray-500">
+                    Designed and developed with <i class="fas fa-heart text-red-500 mx-1"></i> by Salman Yahya
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                });
+            }
+            
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        });
+    </script>
+</body>
+</html>

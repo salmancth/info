@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Education - Salman Yahya">
+    <title>Education - Salman Yahya</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        :root { --primary: #2563eb; --secondary: #7c3aed; }
+        body { font-family: 'Inter', sans-serif; }
+        .dark { color-scheme: dark; }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    
+    <header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm z-50 border-b border-gray-200 dark:border-gray-800">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">SY</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-800 dark:text-white hidden sm:block">Salman Yahya</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+                    <a href="about.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+                    <a href="experience.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Experience</a>
+                    <a href="education.html" class="nav-link font-medium text-blue-600 dark:text-blue-400 font-bold">Education</a>
+                    <a href="skills.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
+                    <a href="projects.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
+                    <a href="gallery.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Gallery</a>
+                    <a href="index.html#contact" class="btn-primary px-6 py-2 rounded-lg font-semibold text-white transition-all hover:shadow-lg">
+                        Contact
+                    </a>
+                    
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+                
+                <button id="mobile-menu-button" class="md:hidden text-gray-800 dark:text-gray-200 p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-800 pt-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Home</a>
+                    <a href="about.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">About</a>
+                    <a href="experience.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Experience</a>
+                    <a href="education.html" class="nav-link font-medium text-blue-600 dark:text-blue-400 font-bold py-2">Education</a>
+                    <a href="skills.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Skills</a>
+                    <a href="projects.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Projects</a>
+                    <a href="gallery.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Gallery</a>
+                    <a href="index.html#contact" class="btn-primary px-6 py-3 rounded-lg font-semibold text-white text-center mt-4">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-blue-900/20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Education</h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Academic background spanning electrical engineering, communication systems, robotics, and software development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Education Timeline -->
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-green-500 md:transform md:-translate-x-1/2"></div>
+                    
+                    <!-- Education Items -->
+                    <div class="space-y-12">
+                        
+                        <!-- Education 1 - Most Recent -->
+                        <div class="relative flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/2 md:pr-12 md:text-right order-1">
+                                <div class="education-card bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-blue-900/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-blue-500">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-blue-600 font-bold text-sm mb-2 block">2021 - 2022</span>
+                                            <h3 class="text-2xl font-bold mb-2">Fullstack Development in C#.Net</h3>
+                                            <p class="text-gray-600 dark:text-gray-400 font-medium mb-3">Lexicon Vocational College</p>
+                                        </div>
+                                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-graduation-cap text-blue-600 dark:text-blue-400"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                        Intensive vocational training in full-stack .NET development covering C#, ASP.NET Core, 
+                                        Entity Framework, Blazor, and modern web development practices.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full">C#</span>
+                                        <span class="text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full">ASP.NET Core</span>
+                                        <span class="text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full">Blazor</span>
+                                        <span class="text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full">Entity Framework</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Timeline Dot -->
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 transform -translate-x-1/2 z-10 flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">4</span>
+                            </div>
+                            
+                            <div class="md:w-1/2 md:pl-12 order-2 mt-8 md:mt-0">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                    <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Key Coursework & Projects</h4>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Advanced C# programming and .NET framework</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Web API development with ASP.NET Core</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Database design and Entity Framework</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Modern frontend development with Blazor</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Software architecture and design patterns</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Education 2 -->
+                        <div class="relative flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/2 md:pr-12 order-1 md:order-2 mt-8 md:mt-0">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                    <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Key Coursework & Research</h4>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Industrial robotics and automation systems</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Control theory and PID controllers</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Machine vision and image processing</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">PLC programming and industrial networks</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Thesis: "Automated Quality Control System"</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Timeline Dot -->
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-purple-600 rounded-full border-4 border-white dark:border-gray-900 transform -translate-x-1/2 z-10 flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">3</span>
+                            </div>
+                            
+                            <div class="md:w-1/2 md:pl-12 order-2 md:order-1">
+                                <div class="education-card bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-purple-900/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-purple-500">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-purple-600 font-bold text-sm mb-2 block">2018 - 2020</span>
+                                            <h3 class="text-2xl font-bold mb-2">M.Sc. Robotics and Automation</h3>
+                                            <p class="text-gray-600 dark:text-gray-400 font-medium mb-3">University West</p>
+                                        </div>
+                                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-robot text-purple-600 dark:text-purple-400"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                        Master's program focusing on industrial automation, robotics, control systems, and 
+                                        machine vision. Specialized in PLC programming and automated manufacturing systems.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full">Robotics</span>
+                                        <span class="text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full">Automation</span>
+                                        <span class="text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full">PLC</span>
+                                        <span class="text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full">Control Systems</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Education 3 -->
+                        <div class="relative flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/2 md:pr-12 md:text-right order-1">
+                                <div class="education-card bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-green-900/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-green-500">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-green-600 font-bold text-sm mb-2 block">2016 - 2018</span>
+                                            <h3 class="text-2xl font-bold mb-2">M.Sc. Communication Engineering</h3>
+                                            <p class="text-gray-600 dark:text-gray-400 font-medium mb-3">Chalmers University of Technology</p>
+                                        </div>
+                                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-satellite text-green-600 dark:text-green-400"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                        Advanced studies in communication systems, signal processing, and RF engineering. 
+                                        Focus on wireless communication, antenna design, and digital signal processing.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full">RF Engineering</span>
+                                        <span class="text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full">Signal Processing</span>
+                                        <span class="text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full">Antenna Design</span>
+                                        <span class="text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full">Wireless Comm</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Timeline Dot -->
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-green-600 rounded-full border-4 border-white dark:border-gray-900 transform -translate-x-1/2 z-10 flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">2</span>
+                            </div>
+                            
+                            <div class="md:w-1/2 md:pl-12 order-2 mt-8 md:mt-0">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                    <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Key Coursework & Research</h4>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Advanced digital signal processing</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">RF and microwave circuit design</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Antenna theory and design</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Wireless communication systems</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Thesis: "77GHz Automotive Radar Components"</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Education 4 -->
+                        <div class="relative flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/2 md:pr-12 order-1 md:order-2 mt-8 md:mt-0">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                    <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Key Coursework & Projects</h4>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-orange-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Circuit theory and electronics</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-orange-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Digital systems and microprocessors</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-orange-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Power systems and control</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-orange-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Communication systems</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-orange-500 mt-1 mr-3"></i>
+                                            <span class="text-gray-600 dark:text-gray-400">Final project: "Smart Grid System"</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Timeline Dot -->
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-orange-600 rounded-full border-4 border-white dark:border-gray-900 transform -translate-x-1/2 z-10 flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">1</span>
+                            </div>
+                            
+                            <div class="md:w-1/2 md:pl-12 order-2 md:order-1">
+                                <div class="education-card bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-gray-800 dark:to-orange-900/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-orange-500">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-orange-600 font-bold text-sm mb-2 block">2010 - 2014</span>
+                                            <h3 class="text-2xl font-bold mb-2">B.Sc. Electrical & Electronic Engineering</h3>
+                                            <p class="text-gray-600 dark:text-gray-400 font-medium mb-3">International Islamic University of Chittagong</p>
+                                        </div>
+                                        <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-bolt text-orange-600 dark:text-orange-400"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                        Comprehensive foundation in electrical engineering covering circuit design, power systems, 
+                                        electronics, control systems, and communication engineering.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="text-xs font-medium bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-3 py-1 rounded-full">Circuit Design</span>
+                                        <span class="text-xs font-medium bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-3 py-1 rounded-full">Electronics</span>
+                                        <span class="text-xs font-medium bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-3 py-1 rounded-full">Power Systems</span>
+                                        <span class="text-xs font-medium bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-3 py-1 rounded-full">Control Systems</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Additional Training & Certifications -->
+                <div class="mt-20">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Additional Training & Certifications</h2>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fab fa-aws text-blue-600 dark:text-blue-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">AWS Cloud Practitioner</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">Amazon Web Services</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">2023</p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-shield-alt text-green-600 dark:text-green-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Network Security Fundamentals</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">Cisco Networking Academy</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">2022</p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fab fa-docker text-purple-600 dark:text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Docker & Containerization</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">Udemy</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">2021</p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-project-diagram text-red-600 dark:text-red-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Agile Project Management</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">Scrum.org</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">2020</p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fab fa-python text-yellow-600 dark:text-yellow-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Python for Data Science</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">DataCamp</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">2019</p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-chart-line text-indigo-600 dark:text-indigo-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">MATLAB & Simulink</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">MathWorks Academy</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">2018</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-xl font-bold text-white mb-2">Salman Yahya</p>
+                    <p class="text-gray-400">&copy; <span id="current-year">2025</span> All rights reserved.</p>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="https://linkedin.com/in/salman-yahya" target="_blank" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/salmancth" target="_blank" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="mailto:salmanyahya@outlook.com" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Gothenburg, Sweden
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-sm text-gray-500">
+                    Designed and developed with <i class="fas fa-heart text-red-500 mx-1"></i> by Salman Yahya
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                });
+            }
+            
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        });
+    </script>
+</body>
+</html>

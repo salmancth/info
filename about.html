@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Salman Yahya - Automation Engineer, IT Specialist, and .NET Developer">
+    <title>About - Salman Yahya</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .dark {
+            color-scheme: dark;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    
+    <!-- Header -->
+    <header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm z-50 border-b border-gray-200 dark:border-gray-800">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">SY</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-800 dark:text-white hidden sm:block">Salman Yahya</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+                    <a href="about.html" class="nav-link font-medium text-blue-600 dark:text-blue-400 font-bold">About</a>
+                    <a href="experience.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Experience</a>
+                    <a href="education.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Education</a>
+                    <a href="skills.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
+                    <a href="projects.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
+                    <a href="gallery.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Gallery</a>
+                    <a href="index.html#contact" class="btn-primary px-6 py-2 rounded-lg font-semibold text-white transition-all hover:shadow-lg">
+                        Contact
+                    </a>
+                    
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-800 dark:text-gray-200 p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-800 pt-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Home</a>
+                    <a href="about.html" class="nav-link font-medium text-blue-600 dark:text-blue-400 font-bold py-2">About</a>
+                    <a href="experience.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Experience</a>
+                    <a href="education.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Education</a>
+                    <a href="skills.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Skills</a>
+                    <a href="projects.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Projects</a>
+                    <a href="gallery.html" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Gallery</a>
+                    <a href="index.html#contact" class="btn-primary px-6 py-3 rounded-lg font-semibold text-white text-center mt-4">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-blue-900/20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">About Me</h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Passionate engineer bridging hardware and software to create innovative solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Personal Info -->
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <!-- Profile Image -->
+                    <div class="md:col-span-1">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-xl opacity-20"></div>
+                            <img class="relative w-full rounded-xl shadow-xl border-4 border-white dark:border-gray-800"
+                                 src="assets/img/profile.jpg"
+                                 alt="Salman Yahya"
+                                 onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500&q=80'">
+                        </div>
+                    </div>
+                    
+                    <!-- Personal Details -->
+                    <div class="md:col-span-2">
+                        <h2 class="text-2xl font-bold mb-6">Personal Information</h2>
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Full Name</p>
+                                    <p class="font-semibold">Salman Yahya</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Location</p>
+                                    <p class="font-semibold">Gothenburg, Sweden</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Email</p>
+                                    <a href="mailto:salmanyahya@outlook.com" class="font-semibold text-blue-600 hover:text-blue-700">
+                                        salmanyahya@outlook.com
+                                    </a>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Phone</p>
+                                    <p class="font-semibold">+46 70 000 00 00</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                                <h3 class="font-bold text-lg mb-4">Professional Summary</h3>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                    I am a technically driven and detail-oriented engineer with a strong passion for programming, automation, and troubleshooting. 
+                                    With expertise spanning from embedded systems to full-stack development, I bring a unique perspective to solving complex 
+                                    technical challenges.
+                                </p>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    My background in both electrical engineering and software development allows me to bridge the gap between hardware and software, 
+                                    creating integrated solutions that are both efficient and innovative.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Philosophy & Approach -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-center">My Philosophy & Approach</h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Card 1 -->
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-lightbulb text-blue-600 dark:text-blue-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Problem-Solving Focus</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                I believe in understanding the root cause of problems and developing sustainable, efficient solutions rather than quick fixes.
+                            </p>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-book text-green-600 dark:text-green-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Continuous Learning</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Technology evolves rapidly. I'm committed to staying updated with emerging trends and continuously expanding my skill set.
+                            </p>
+                        </div>
+                        
+                        <!-- Card 3 -->
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-users text-purple-600 dark:text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Collaborative Mindset</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                The best solutions come from teamwork. I value diverse perspectives and believe in collaborative problem-solving.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical Journey -->
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-blue-900/20 rounded-2xl p-8 mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-center">My Technical Journey</h2>
+                    
+                    <div class="space-y-8">
+                        <!-- Journey Item 1 -->
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Electrical Engineering Foundation</h3>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    My journey began with a Bachelor's in Electrical and Electronic Engineering, where I developed a strong foundation 
+                                    in circuit design, embedded systems, and hardware development.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Journey Item 2 -->
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Advanced Specialization</h3>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    Pursued Master's degrees in Communication Engineering and Robotics/Automation, specializing in RF design, 
+                                    signal processing, and industrial automation systems.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Journey Item 3 -->
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Software Development</h3>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    Expanded into software development through vocational training in Fullstack .NET development, 
+                                    gaining expertise in C#, web technologies, and modern software architecture.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Journey Item 4 -->
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Professional Integration</h3>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    Now integrating hardware and software expertise to create innovative solutions in automation, 
+                                    IT infrastructure, and full-stack development across various industries.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Personal Interests -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-8 text-center">Personal Interests</h2>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <i class="fas fa-microchip text-blue-600 text-3xl mb-4"></i>
+                            <h3 class="font-bold text-lg mb-2">Technology Trends</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                Following advancements in AI, IoT, and automation technologies
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <i class="fas fa-book-open text-green-600 text-3xl mb-4"></i>
+                            <h3 class="font-bold text-lg mb-2">Technical Reading</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                Reading technical documentation, research papers, and tech blogs
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <i class="fas fa-code text-purple-600 text-3xl mb-4"></i>
+                            <h3 class="font-bold text-lg mb-2">Open Source</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                Contributing to and learning from open-source projects
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <i class="fas fa-hiking text-orange-600 text-3xl mb-4"></i>
+                            <h3 class="font-bold text-lg mb-2">Outdoor Activities</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                Hiking, cycling, and exploring nature during free time
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Copyright -->
+                <div class="mb-6 md:mb-0">
+                    <p class="text-xl font-bold text-white mb-2">Salman Yahya</p>
+                    <p class="text-gray-400">&copy; <span id="current-year">2025</span> All rights reserved.</p>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="https://linkedin.com/in/salman-yahya" target="_blank" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/salmancth" target="_blank" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="mailto:salmanyahya@outlook.com" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+                
+                <!-- Location -->
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Gothenburg, Sweden
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Credits -->
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-sm text-gray-500">
+                    Designed and developed with <i class="fas fa-heart text-red-500 mx-1"></i> by Salman Yahya
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                });
+            }
+            
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        });
+    </script>
+</body>
+</html>
