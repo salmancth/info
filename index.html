@@ -1,618 +1,300 @@
 <!DOCTYPE html>
-<html lang="sv" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Salman Yahya - Automation Engineer | IT Support Specialist | .NET Developer">
-    <meta name="keywords" content="Automation, Embedded Systems, Developer, Engineer, Portfolio">
-    <meta name="author" content="Salman Yahya">
+    <!-- Meta Information -->
+    <!--#include virtual="components/meta.html" -->
     
-    <title>Salman Yahya - Automation & IT Professional</title>
+    <title>Salman Yahya - Professional Portfolio</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
     
-    <!-- Favicon -->
-    <link rel="icon" href="assets/img/favicon.ico">
-    
-    <style>
-        :root {
-            --primary: #2563eb;
-            --secondary: #7c3aed;
-            --accent: #06b6d4;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .dark {
-            color-scheme: dark;
-        }
-        
-        /* Custom animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-    </style>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/img/profile.jpg" as="image">
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+<body>
+    <!-- Header Component -->
+    <!--#include virtual="components/header.html" -->
     
-    <!-- Header -->
-    <header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm z-50 border-b border-gray-200 dark:border-gray-800">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold">SY</span>
-                    </div>
-                    <span class="text-xl font-bold text-gray-800 dark:text-white hidden sm:block">Salman Yahya</span>
-                </a>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
-                    <a href="#about" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
-                    <a href="#experience" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Experience</a>
-                    <a href="#skills" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
-                    <a href="#projects" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
-                    <a href="#contact" class="btn-primary px-6 py-2 rounded-lg font-semibold text-white transition-all hover:shadow-lg">
-                        Contact Me
-                    </a>
-                    
-                    <!-- Theme Toggle -->
-                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:inline"></i>
-                    </button>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-gray-800 dark:text-gray-200 p-2">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-800 pt-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="#home" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Home</a>
-                    <a href="#about" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">About</a>
-                    <a href="#experience" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Experience</a>
-                    <a href="#skills" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Skills</a>
-                    <a href="#projects" class="nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Projects</a>
-                    <a href="#contact" class="btn-primary px-6 py-3 rounded-lg font-semibold text-white text-center mt-4">
-                        Contact Me
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen pt-32 pb-20 flex items-center">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <!-- Profile Image -->
-                <div class="relative w-48 h-48 mx-auto mb-8">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-2xl opacity-30"></div>
-                    <img class="relative w-48 h-48 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl" 
-                         src="assets/img/profile.jpg" 
-                         alt="Salman Yahya"
-                         onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80'">
-                </div>
-                
-                <!-- Headline -->
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-6">
-                    <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                        SALMAN YAHYA
-                    </span>
-                </h1>
-                
-                <!-- Subtitle -->
-                <div class="text-center mb-10">
-                    <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium mb-4">
-                        Automation Engineer | IT Support Specialist | .NET Developer
-                    </p>
-                    <p class="text-gray-500 dark:text-gray-500 max-w-2xl mx-auto">
-                        Passionate about creating innovative solutions through automation, software development, and technical problem-solving.
-                    </p>
-                </div>
-                
-                <!-- CTA Buttons -->
-                <div class="flex flex-wrap justify-center gap-4 mb-16">
-                    <a href="#contact" class="btn-primary px-8 py-4 rounded-xl font-semibold text-white text-lg transition-all hover:shadow-xl hover:-translate-y-1">
-                        <i class="fas fa-envelope mr-2"></i>Get In Touch
-                    </a>
-                    <a href="#projects" class="bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 px-8 py-4 rounded-xl font-semibold text-white text-lg transition-all hover:shadow-xl hover:-translate-y-1">
-                        <i class="fas fa-code mr-2"></i>View Projects
-                    </a>
-                    <a href="#" class="border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:shadow-xl hover:-translate-y-1">
-                        <i class="fas fa-download mr-2"></i>Download CV
-                    </a>
-                </div>
-                
-                <!-- Stats -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-                    <div class="stat-card">
-                        <div class="text-3xl font-bold text-blue-600">5+</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="text-3xl font-bold text-purple-600">20+</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="text-3xl font-bold text-green-600">15+</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Technologies</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="text-3xl font-bold text-orange-600">3</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Degrees</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800/50">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 text-center">About Me</h2>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Left Column -->
-                        <div>
-                            <h3 class="text-2xl font-bold mb-6">Who I Am</h3>
-                            <p class="text-gray-700 dark:text-gray-300 mb-4">
-                                I am a technically driven and detail-oriented engineer with a strong passion for programming, automation, and troubleshooting. With a background in both hardware and software, I bring a unique perspective to solving complex technical challenges.
-                            </p>
-                            <p class="text-gray-700 dark:text-gray-300 mb-6">
-                                Currently seeking a challenging role where I can apply my expertise in automation, IT infrastructure, and software development to contribute to innovative solutions and drive technological progress.
-                            </p>
-                            
-                            <div class="space-y-4">
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                                    <span class="text-gray-700 dark:text-gray-300">Experienced in embedded systems</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                                    <span class="text-gray-700 dark:text-gray-300">IT coordinator and administrator</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                                    <span class="text-gray-700 dark:text-gray-300">Cloud technology and Docker</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                                    <span class="text-gray-700 dark:text-gray-300">Fullstack .NET development</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Right Column -->
-                        <div>
-                            <h3 class="text-2xl font-bold mb-6">Technical Expertise</h3>
-                            
-                            <!-- Skill Bars -->
-                            <div class="space-y-6">
-                                <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium text-gray-700 dark:text-gray-300">PLC Programming</span>
-                                        <span class="text-blue-600 font-bold">90%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 90%"></div>
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium text-gray-700 dark:text-gray-300">C# / .NET</span>
-                                        <span class="text-blue-600 font-bold">88%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 88%"></div>
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium text-gray-700 dark:text-gray-300">MATLAB/Simulink</span>
-                                        <span class="text-blue-600 font-bold">85%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 85%"></div>
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium text-gray-700 dark:text-gray-300">Python</span>
-                                        <span class="text-blue-600 font-bold">75%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 75%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 text-center">Work Experience</h2>
-            
-            <!-- Timeline -->
-            <div class="max-w-4xl mx-auto relative">
-                <!-- Timeline Line -->
-                <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gray-300 dark:bg-gray-700 md:transform md:-translate-x-1/2"></div>
-                
-                <!-- Experience Items -->
-                <div class="space-y-12">
-                    <!-- Experience 1 -->
-                    <div class="relative flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 md:pr-12 md:text-right order-1 md:order-1">
-                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                                <span class="text-blue-600 font-bold text-sm mb-2 block">Jan 2025 - Apr 2025</span>
-                                <h3 class="text-xl font-bold mb-2">Automation Engineer</h3>
-                                <p class="text-gray-600 dark:text-gray-400 font-medium mb-3">CATC AB</p>
-                                <p class="text-gray-700 dark:text-gray-300">System integration and configuration of industrial automation systems including PLC programming and SCADA implementation.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Timeline Dot -->
-                        <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 transform -translate-x-1/2 z-10"></div>
-                        
-                        <div class="md:w-1/2 md:pl-12 order-2 md:order-2"></div>
-                    </div>
-                    
-                    <!-- Experience 2 -->
-                    <div class="relative flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 md:pr-12 order-1 md:order-2"></div>
-                        
-                        <!-- Timeline Dot -->
-                        <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 transform -translate-x-1/2 z-10"></div>
-                        
-                        <div class="md:w-1/2 md:pl-12 order-2 md:order-1">
-                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                                <span class="text-blue-600 font-bold text-sm mb-2 block">Mar 2023 - Jun 2024</span>
-                                <h3 class="text-xl font-bold mb-2">IT Support Technician</h3>
-                                <p class="text-gray-600 dark:text-gray-400 font-medium mb-3">Toyota Material Handling</p>
-                                <p class="text-gray-700 dark:text-gray-300">Technical support, network configuration and troubleshooting in enterprise environment as a consultant.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Experience 3 -->
-                    <div class="relative flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 md:pr-12 md:text-right order-1 md:order-1">
-                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                                <span class="text-blue-600 font-bold text-sm mb-2 block">Jan 2023 - Jun 2023</span>
-                                <h3 class="text-xl font-bold mb-2">System Developer</h3>
-                                <p class="text-gray-600 dark:text-gray-400 font-medium mb-3">Chalmers University of Technology</p>
-                                <p class="text-gray-700 dark:text-gray-300">Software development for bioinformatics research applications using .NET technologies.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Timeline Dot -->
-                        <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 transform -translate-x-1/2 z-10"></div>
-                        
-                        <div class="md:w-1/2 md:pl-12 order-2 md:order-2"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800/50">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 text-center">Featured Projects</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Project 1 -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-xs font-semibold text-blue-600 bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full">
-                                Software Development
-                            </span>
-                            <i class="fas fa-star text-yellow-500"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Bioinformatics Pipeline</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">
-                            Developed a pipeline for extracting biomedical data from scientific publications with C#, Blazor and Entity Framework.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">C#</span>
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">Blazor</span>
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">AWS</span>
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">Docker</span>
-                        </div>
-                        <a href="http://addcell.org" target="_blank" class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-xs font-semibold text-purple-600 bg-purple-100 dark:bg-purple-900/30 px-3 py-1 rounded-full">
-                                Embedded Systems
-                            </span>
-                            <i class="fas fa-star text-yellow-500"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Vehicle Radar Component</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">
-                            Designed and simulated waveguide components for 77GHz automotive radar systems using CST Studio Suite.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">CST</span>
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">MATLAB</span>
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">RF Design</span>
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">Simulation</span>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
-                            View Details <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-xs font-semibold text-green-600 bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full">
-                                Automation
-                            </span>
-                            <i class="fas fa-star text-yellow-500"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Industrial Automation System</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">
-                            PLC programming and system integration for manufacturing automation using Siemens PLC and CODESYS.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">PLC</span>
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">CODESYS</span>
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">SCADA</span>
-                            <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">Siemens</span>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
-                            View Details <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 text-center">Get In Touch</h2>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-blue-900/20 rounded-2xl p-8 md:p-12 shadow-xl">
-                    <div class="text-center mb-10">
-                        <p class="text-xl text-gray-700 dark:text-gray-300 mb-6">
-                            I'm currently seeking new opportunities and would love to connect. Whether you have a question or a potential project, don't hesitate to contact me.
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="container">
+                <div class="hero-content animate-fade-in">
+                    <p class="hero-subtitle">Hello, I'm</p>
+                    <h1 class="hero-title">Salman Yahya</h1>
+                    <div class="typewriter">
+                        <p class="hero-description">
+                            Automation Engineer | IT Support Specialist | .NET Developer
                         </p>
                     </div>
-                    
-                    <div class="flex flex-col md:flex-row justify-center items-center gap-8">
-                        <!-- Email -->
-                        <a href="mailto:salmanyahya@outlook.com" class="contact-method bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 w-full md:w-auto">
-                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-envelope text-blue-600 dark:text-blue-400 text-2xl"></i>
-                            </div>
-                            <h3 class="font-bold text-lg mb-2">Email</h3>
-                            <p class="text-gray-600 dark:text-gray-400">salmanyahya@outlook.com</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn">
+                            <i class="fas fa-rocket"></i>
+                            View Projects
                         </a>
-                        
-                        <!-- LinkedIn -->
-                        <a href="https://linkedin.com/in/salman-yahya" target="_blank" class="contact-method bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 w-full md:w-auto">
-                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fab fa-linkedin text-blue-600 dark:text-blue-400 text-2xl"></i>
-                            </div>
-                            <h3 class="font-bold text-lg mb-2">LinkedIn</h3>
-                            <p class="text-gray-600 dark:text-gray-400">Connect with me</p>
-                        </a>
-                        
-                        <!-- GitHub -->
-                        <a href="https://github.com/salmancth" target="_blank" class="contact-method bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 w-full md:w-auto">
-                            <div class="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fab fa-github text-gray-800 dark:text-gray-300 text-2xl"></i>
-                            </div>
-                            <h3 class="font-bold text-lg mb-2">GitHub</h3>
-                            <p class="text-gray-600 dark:text-gray-400">View my projects</p>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            Contact Me
                         </a>
                     </div>
-                    
-                    <!-- CTA Button -->
-                    <div class="text-center mt-12">
-                        <a href="mailto:salmanyahya@outlook.com" class="btn-primary px-10 py-4 rounded-xl font-semibold text-white text-lg inline-flex items-center hover:shadow-xl hover:-translate-y-1 transition-all">
-                            <i class="fas fa-paper-plane mr-3"></i> Send Message
-                        </a>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="50">0+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="5">0+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="100">100%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <!-- Copyright -->
-                <div class="mb-6 md:mb-0">
-                    <p class="text-xl font-bold text-white mb-2">Salman Yahya</p>
-                    <p class="text-gray-400">&copy; <span id="current-year">2025</span> All rights reserved.</p>
-                </div>
-                
-                <!-- Social Links -->
-                <div class="flex space-x-6 mb-6 md:mb-0">
-                    <a href="https://linkedin.com/in/salman-yahya" target="_blank" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                        <i class="fab fa-linkedin-in text-xl"></i>
-                    </a>
-                    <a href="https://github.com/salmancth" target="_blank" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="mailto:salmanyahya@outlook.com" class="social-icon w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
-                        <i class="fas fa-envelope text-xl"></i>
-                    </a>
-                </div>
-                
-                <!-- Location -->
-                <div class="text-center md:text-right">
-                    <p class="text-gray-400">
-                        <i class="fas fa-map-marker-alt mr-2"></i> Gothenburg, Sweden
-                    </p>
                 </div>
             </div>
             
-            <!-- Credits -->
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-sm text-gray-500">
-                    Designed and developed with <i class="fas fa-heart text-red-500 mx-1"></i> by Salman Yahya
-                </p>
-            </div>
-        </div>
-    </footer>
+            <!-- Scroll Indicator -->
+            <a href="#about" class="scroll-indicator">
+                <i class="fas fa-chevron-down animate-float"></i>
+            </a>
+        </section>
 
-    <!-- JavaScript Files -->
-    <script src="assets/js/main.js"></script>
+        <!-- About Preview -->
+        <section class="section section-bg" id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Me</h2>
+                    <p class="section-subtitle">Get to know me better</p>
+                </div>
+                <div class="grid grid-2">
+                    <div class="about-image reveal animate-slide-left">
+                        <img src="assets/img/profile.jpg" alt="Salman Yahya" class="profile-img">
+                        <div class="about-badge">
+                            <i class="fas fa-award"></i>
+                            <span>Available for Opportunities</span>
+                        </div>
+                    </div>
+                    <div class="about-content reveal animate-slide-right">
+                        <h3>Technically Driven Engineer & Developer</h3>
+                        <p>I'm a detail-oriented engineer with strong passion for programming, automation, and troubleshooting. I thrive in challenging environments where I can apply my expertise to create innovative solutions.</p>
+                        
+                        <div class="about-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Location</strong>
+                                    <span>Västra Frölunda, Sweden</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <span>salmanyahya@outlook.com</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-briefcase"></i>
+                                <div>
+                                    <strong>Status</strong>
+                                    <span>Open to Opportunities</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="about.html" class="btn">
+                            <i class="fas fa-user"></i>
+                            Read Full Bio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Featured Projects</h2>
+                    <p class="section-subtitle">Some of my recent work</p>
+                </div>
+                <div class="grid grid-3">
+                    <div class="card reveal">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <h3 class="card-title">Bioinformatics Pipeline</h3>
+                        </div>
+                        <p>Developed a pipeline for extracting biomedical data from scientific publications using C#, Blazor and Entity Framework.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">.NET</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <a href="projects.html" class="btn btn-sm">
+                            View Details
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="card reveal">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h3 class="card-title">Vehicle Radar System</h3>
+                        </div>
+                        <p>Designed and simulated 77 GHz automotive radar components using CST Studio Suite with gap waveguide technology.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">CST Studio</span>
+                            <span class="tech-tag">MATLAB</span>
+                            <span class="tech-tag">RF Design</span>
+                        </div>
+                        <a href="projects.html" class="btn btn-sm">
+                            View Details
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="card reveal">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3 class="card-title">Industrial Automation</h3>
+                        </div>
+                        <p>PLC programming and system integration for industrial automation projects with focus on efficiency and reliability.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PLC</span>
+                            <span class="tech-tag">CODESYS</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="projects.html" class="btn btn-sm">
+                            View Details
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <a href="projects.html" class="btn btn-lg">
+                        <i class="fas fa-project-diagram"></i>
+                        View All Projects
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="section section-bg" id="stats">
+            <div class="container">
+                <div class="grid grid-4">
+                    <div class="stat-card text-center">
+                        <div class="stat-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="stat-number" data-count="10">0+</div>
+                        <div class="stat-label">Programming Languages</div>
+                    </div>
+                    <div class="stat-card text-center">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-number" data-count="50">0+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card text-center">
+                        <div class="stat-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="stat-number" data-count="4">0</div>
+                        <div class="stat-label">Degrees</div>
+                    </div>
+                    <div class="stat-card text-center">
+                        <div class="stat-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="stat-number" data-count="8">0+</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="cta-card text-center">
+                    <h2>Let's Work Together</h2>
+                    <p class="cta-text">I'm currently available for freelance work and full-time opportunities. Let's discuss how I can contribute to your team.</p>
+                    <div class="cta-actions">
+                        <a href="mailto:salmanyahya@outlook.com" class="btn btn-lg">
+                            <i class="fas fa-envelope"></i>
+                            Send Message
+                        </a>
+                        <a href="tel:+46701234567" class="btn btn-lg btn-outline">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <!--#include virtual="components/footer.html" -->
+    
+    <!-- JavaScript -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/components.js" defer></script>
     
     <script>
-        // Initialize everything when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+        // Counter animation for stats
+        function animateCounter() {
+            const counters = document.querySelectorAll('[data-count]');
             
-            // Theme toggle functionality
-            const themeToggle = document.getElementById('theme-toggle');
-            if (themeToggle) {
-                themeToggle.addEventListener('click', function() {
-                    if (document.documentElement.classList.contains('dark')) {
-                        document.documentElement.classList.remove('dark');
-                        localStorage.setItem('theme', 'light');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current) + (counter.textContent.includes('%') ? '%' : '');
+                        setTimeout(updateCounter, 20);
                     } else {
-                        document.documentElement.classList.add('dark');
-                        localStorage.setItem('theme', 'dark');
+                        counter.textContent = target + (counter.textContent.includes('%') ? '%' : '+');
                     }
-                });
-            }
-            
-            // Mobile menu functionality
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                    const icon = mobileMenuButton.querySelector('i');
-                    if (icon.classList.contains('fa-bars')) {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                    } else {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                });
-            }
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href === '#' || href === '#!') return;
-                    
-                    e.preventDefault();
-                    const targetId = href.substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    
-                    if (targetElement) {
-                        const headerHeight = document.querySelector('header').offsetHeight;
-                        const targetPosition = targetElement.offsetTop - headerHeight - 20;
-                        
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Close mobile menu if open
-                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                            const icon = mobileMenuButton.querySelector('i');
-                            if (icon) {
-                                icon.classList.remove('fa-times');
-                                icon.classList.add('fa-bars');
-                            }
-                        }
-                    }
-                });
+                };
+                
+                updateCounter();
             });
-            
-            // Set active nav link based on scroll position
-            function setActiveNavLink() {
-                const sections = document.querySelectorAll('section[id]');
-                const navLinks = document.querySelectorAll('.nav-link');
-                
-                let currentSection = '';
-                const scrollPosition = window.scrollY + 100;
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        currentSection = section.getAttribute('id');
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('text-blue-600', 'dark:text-blue-400');
-                    if (link.getAttribute('href') === `#${currentSection}`) {
-                        link.classList.add('text-blue-600', 'dark:text-blue-400');
-                    }
-                });
-            }
-            
-            // Check scroll position on load and scroll
-            window.addEventListener('scroll', setActiveNavLink);
-            setActiveNavLink(); // Initial check
-            
-            // Check for saved theme preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-            }
-        });
+        }
+        
+        // Trigger counter animation when stats section is in view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.querySelector('#stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
     </script>
 </body>
 </html>
