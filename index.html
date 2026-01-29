@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="sv" class="scroll-smooth">
 <head>
+    <!-- Meta Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Salman Yahya - Automation Engineer | IT Support Specialist | .NET Developer. Professional portfolio showcasing skills, experience, and projects.">
@@ -23,88 +24,95 @@
     
     <title>Salman Yahya - Automation & IT Professional</title>
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-    
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@300;400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
-</head>
-<body class="bg-gray-50 text-gray-700">
     
-    <!-- Header (Will be loaded by JavaScript) -->
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/img/profile.jpg" as="image">
+    <link rel="preload" href="assets/css/style.css" as="style">
+</head>
+<body>
+    <!-- Header will be loaded by JavaScript -->
     <div id="header"></div>
-
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <p class="hero-subtitle" data-translate="hero.subtitle">Hello, I'm</p>
-                <h1 class="hero-title">SALMAN YAHYA</h1>
-                <p class="hero-description" data-translate="hero.title">Automation Engineer | IT Support Specialist | .NET Developer</p>
-                
-                <div class="hero-actions">
-                    <a href="#projects" class="btn" data-translate="hero.ctaProjects">
-                        <i class="fas fa-rocket"></i>
-                        View Projects
-                    </a>
-                    <a href="#contact" class="btn btn-outline" data-translate="hero.ctaContact">
-                        <i class="fas fa-envelope"></i>
-                        Contact Me
-                    </a>
-                </div>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="50">0+</div>
-                        <div class="stat-label">Projects Completed</div>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="container">
+                <div class="hero-content animate-fade-in">
+                    <p class="hero-subtitle" data-translate="hero.subtitle">Hello, I'm</p>
+                    <h1 class="hero-title">SALMAN YAHYA</h1>
+                    <div class="typewriter">
+                        <p class="hero-description" data-translate="hero.title">
+                            Automation Engineer | IT Support Specialist | .NET Developer
+                        </p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="5">0+</div>
-                        <div class="stat-label">Years Experience</div>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn">
+                            <i class="fas fa-rocket"></i>
+                            <span data-translate="hero.ctaProjects">View Projects</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            <span data-translate="hero.ctaContact">Contact Me</span>
+                        </a>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="100">100%</div>
-                        <div class="stat-label">Client Satisfaction</div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="50">0+</div>
+                            <div class="stat-label" data-translate="hero.projects">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="5">0+</div>
+                            <div class="stat-label" data-translate="hero.experience">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="100">100%</div>
+                            <div class="stat-label" data-translate="hero.satisfaction">Client Satisfaction</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <a href="#about" class="scroll-indicator">
-            <i class="fas fa-chevron-down animate-float"></i>
-        </a>
-    </header>
+            
+            <!-- Scroll Indicator -->
+            <a href="#about" class="scroll-indicator">
+                <i class="fas fa-chevron-down animate-float"></i>
+            </a>
+        </section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- About Preview Section -->
-        <section id="about" class="section section-bg">
+        <!-- About Preview -->
+        <section class="section section-bg" id="about">
             <div class="container">
                 <div class="section-title">
                     <h2 data-translate="about.title">About Me</h2>
                     <p class="section-subtitle" data-translate="about.subtitle">Get to know me better</p>
                 </div>
-                
                 <div class="grid grid-2">
                     <div class="about-image reveal animate-slide-left">
                         <img src="assets/img/profile.jpg" alt="Salman Yahya" class="profile-img">
                         <div class="about-badge">
                             <i class="fas fa-award"></i>
-                            <span data-translate="about.statusText">Open to Opportunities</span>
+                            <span data-translate="about.statusText">Available for Opportunities</span>
                         </div>
                     </div>
-                    
                     <div class="about-content reveal animate-slide-right">
-                        <h3>Technically Driven Engineer & Developer</h3>
+                        <h3 data-translate="about.heading">Technically Driven Engineer & Developer</h3>
                         <p data-translate="about.bio">I'm a detail-oriented engineer with strong passion for programming, automation, and troubleshooting. I thrive in challenging environments where I can apply my expertise to create innovative solutions.</p>
                         
                         <div class="about-details">
@@ -119,7 +127,7 @@
                                 <i class="fas fa-envelope"></i>
                                 <div>
                                     <strong data-translate="about.email">Email</strong>
-                                    <a href="mailto:salmanyahya@outlook.com">salmanyahya@outlook.com</a>
+                                    <span>salmanyahya@outlook.com</span>
                                 </div>
                             </div>
                             <div class="detail-item">
@@ -131,189 +139,31 @@
                             </div>
                         </div>
                         
-                        <a href="about.html" class="btn" data-translate="about.readFullBio">
+                        <a href="about.html" class="btn">
                             <i class="fas fa-user"></i>
-                            Read Full Bio
+                            <span data-translate="about.readFullBio">Read Full Bio</span>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Preview -->
-        <section id="experience" class="section">
-            <div class="container">
-                <div class="section-title">
-                    <h2 data-translate="experience.title">Experience</h2>
-                    <p class="section-subtitle" data-translate="experience.subtitle">My professional journey</p>
-                </div>
-                
-                <div class="timeline">
-                    <!-- Experience Item 1 -->
-                    <div class="timeline-item reveal">
-                        <div class="timeline-date">Jan 2025 - Apr 2025</div>
-                        <div class="timeline-content">
-                            <h3>Automation Technician</h3>
-                            <p class="text-primary">CATC AB</p>
-                            <p>Worked on industrial automation systems and PLC programming with focus on efficiency and reliability.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">PLC</span>
-                                <span class="tech-tag">CODESYS</span>
-                                <span class="tech-tag">Industrial Automation</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Experience Item 2 -->
-                    <div class="timeline-item reveal">
-                        <div class="timeline-date">Mar 2023 - Jun 2024</div>
-                        <div class="timeline-content">
-                            <h3>IT Support Technician</h3>
-                            <p class="text-primary">Consultant @ Toyota Material Handling</p>
-                            <p>Provided technical support and network configuration in enterprise environment.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">IT Support</span>
-                                <span class="tech-tag">Network</span>
-                                <span class="tech-tag">System Admin</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Experience Item 3 -->
-                    <div class="timeline-item reveal">
-                        <div class="timeline-date">Jan 2023 - Jun 2023</div>
-                        <div class="timeline-content">
-                            <h3>System Developer</h3>
-                            <p class="text-primary">Chalmers University of Technology</p>
-                            <p>Developed systems and applications for university projects using modern technologies.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">C#</span>
-                                <span class="tech-tag">.NET</span>
-                                <span class="tech-tag">Blazor</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-8">
-                    <a href="experience.html" class="btn">
-                        <i class="fas fa-briefcase"></i>
-                        View Full Experience
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Preview -->
-        <section id="education" class="section section-bg">
-            <div class="container">
-                <div class="section-title">
-                    <h2 data-translate="education.title">Education</h2>
-                    <p class="section-subtitle" data-translate="education.subtitle">My academic background</p>
-                </div>
-                
-                <div class="grid grid-2">
-                    <div class="card reveal">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-university"></i>
-                            </div>
-                            <div>
-                                <h3 class="card-title">Master of Science</h3>
-                                <p class="card-subtitle">Communication Technology</p>
-                            </div>
-                        </div>
-                        <p>Chalmers University of Technology | 2021 - 2023</p>
-                        <p>Specialized in communication systems, signal processing, and network technologies.</p>
-                    </div>
-                    
-                    <div class="card reveal">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div>
-                                <h3 class="card-title">Master of Science</h3>
-                                <p class="card-subtitle">Robotics and Automation</p>
-                            </div>
-                        </div>
-                        <p>University West | 2020 - 2021</p>
-                        <p>Focused on robotics systems, automation control, and industrial applications.</p>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-8">
-                    <a href="education.html" class="btn">
-                        <i class="fas fa-graduation-cap"></i>
-                        View Full Education
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Preview -->
-        <section id="skills" class="section">
-            <div class="container">
-                <div class="section-title">
-                    <h2 data-translate="skills.title">Technical Skills</h2>
-                    <p class="section-subtitle" data-translate="skills.subtitle">Programming languages & tools</p>
-                </div>
-                
-                <div class="skills-preview">
-                    <div class="skill-category">
-                        <h3 data-translate="skills.programming">Programming Languages</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">MATLAB/SIMULINK</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">C# / .NET</span>
-                            <span class="skill-tag">Blazor</span>
-                            <span class="skill-tag">PLC / CODESYS</span>
-                            <span class="skill-tag">PowerShell</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3 data-translate="skills.tools">Tools & Technologies</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">CST Studio Suite</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Linux</span>
-                            <span class="skill-tag">HTML/CSS</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-8">
-                    <a href="skills.html" class="btn">
-                        <i class="fas fa-code"></i>
-                        View All Skills
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Preview -->
-        <section id="projects" class="section section-bg">
+        <!-- Featured Projects -->
+        <section class="section" id="projects">
             <div class="container">
                 <div class="section-title">
                     <h2 data-translate="projects.title">Featured Projects</h2>
                     <p class="section-subtitle" data-translate="projects.subtitle">Some of my recent work</p>
                 </div>
-                
-                <div class="grid grid-2">
+                <div class="grid grid-3">
                     <div class="card reveal">
                         <div class="card-header">
                             <div class="card-icon">
                                 <i class="fas fa-dna"></i>
                             </div>
-                            <div>
-                                <h3 class="card-title">Bioinformatics Pipeline</h3>
-                                <p class="card-subtitle">Chalmers University of Technology</p>
-                            </div>
+                            <h3 class="card-title" data-translate="project1.title">Bioinformatics Pipeline</h3>
                         </div>
-                        <p>Developed a pipeline for extracting biomedical data from scientific publications using C#, Blazor and Entity Framework.</p>
+                        <p data-translate="project1.desc">Developed a pipeline for extracting biomedical data from scientific publications using C#, Blazor and Entity Framework.</p>
                         <div class="project-tech">
                             <span class="tech-tag">C#</span>
                             <span class="tech-tag">.NET</span>
@@ -331,12 +181,9 @@
                             <div class="card-icon">
                                 <i class="fas fa-car"></i>
                             </div>
-                            <div>
-                                <h3 class="card-title">Vehicle Radar System</h3>
-                                <p class="card-subtitle">Gapwaves AB (Thesis Project)</p>
-                            </div>
+                            <h3 class="card-title" data-translate="project2.title">Vehicle Radar System</h3>
                         </div>
-                        <p>Designed and simulated 77 GHz automotive radar components using CST Studio Suite with gap waveguide technology.</p>
+                        <p data-translate="project2.desc">Designed and simulated 77 GHz automotive radar components using CST Studio Suite with gap waveguide technology.</p>
                         <div class="project-tech">
                             <span class="tech-tag">CST Studio</span>
                             <span class="tech-tag">MATLAB</span>
@@ -347,10 +194,28 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
+                    
+                    <div class="card reveal">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3 class="card-title" data-translate="project3.title">Industrial Automation</h3>
+                        </div>
+                        <p data-translate="project3.desc">PLC programming and system integration for industrial automation projects with focus on efficiency and reliability.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PLC</span>
+                            <span class="tech-tag">CODESYS</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="projects.html" class="btn btn-sm">
+                            <span data-translate="projects.viewDetails">View Details</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-                
                 <div class="text-center mt-8">
-                    <a href="projects.html" class="btn">
+                    <a href="projects.html" class="btn btn-lg">
                         <i class="fas fa-project-diagram"></i>
                         <span data-translate="projects.viewAll">View All Projects</span>
                     </a>
@@ -359,7 +224,7 @@
         </section>
 
         <!-- Quick Stats -->
-        <section class="section">
+        <section class="section section-bg" id="stats">
             <div class="container">
                 <div class="grid grid-4">
                     <div class="stat-card text-center">
@@ -374,40 +239,78 @@
                             <i class="fas fa-project-diagram"></i>
                         </div>
                         <div class="stat-number" data-count="50">0+</div>
-                        <div class="stat-label">Projects Completed</div>
+                        <div class="stat-label" data-translate="stats.projects">Projects Completed</div>
                     </div>
                     <div class="stat-card text-center">
                         <div class="stat-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
                         <div class="stat-number" data-count="4">0</div>
-                        <div class="stat-label">Degrees</div>
+                        <div class="stat-label" data-translate="stats.degrees">Degrees</div>
                     </div>
                     <div class="stat-card text-center">
                         <div class="stat-icon">
                             <i class="fas fa-certificate"></i>
                         </div>
                         <div class="stat-number" data-count="8">0+</div>
-                        <div class="stat-label">Certifications</div>
+                        <div class="stat-label" data-translate="stats.certifications">Certifications</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Call to Action -->
-        <section id="contact" class="section">
+        <!-- Technical Skills Preview -->
+        <section class="section" id="skills-preview">
             <div class="container">
-                <div class="cta-card">
+                <div class="section-title">
+                    <h2 data-translate="skills.title">Technical Skills</h2>
+                    <p class="section-subtitle" data-translate="skills.subtitle">Core competencies & technologies</p>
+                </div>
+                <div class="skills-preview-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MATLAB/SIMULINK</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C# / .NET</span>
+                            <span class="skill-tag">Blazor</span>
+                            <span class="skill-tag">PLC / CODESYS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">CST Studio</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <a href="skills.html" class="btn btn-lg">
+                        <i class="fas fa-code"></i>
+                        <span data-translate="skills.viewAll">View All Skills</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="cta-card text-center">
                     <h2 data-translate="contact.title">Let's Work Together</h2>
                     <p class="cta-text" data-translate="contact.text">I'm currently available for freelance work and full-time opportunities. Let's discuss how I can contribute to your team.</p>
                     <div class="cta-actions">
-                        <a href="mailto:salmanyahya@outlook.com" class="btn btn-lg" data-translate="contact.sendMessage">
+                        <a href="mailto:salmanyahya@outlook.com" class="btn btn-lg">
                             <i class="fas fa-envelope"></i>
-                            Send Message
+                            <span data-translate="contact.sendMessage">Send Message</span>
                         </a>
                         <a href="tel:+46701234567" class="btn btn-lg btn-outline">
                             <i class="fas fa-phone"></i>
-                            Call Now
+                            <span data-translate="contact.call">Call Now</span>
                         </a>
                     </div>
                 </div>
@@ -415,9 +318,9 @@
         </section>
     </main>
 
-    <!-- Footer (Will be loaded by JavaScript) -->
+    <!-- Footer will be loaded by JavaScript -->
     <div id="footer"></div>
-
+    
     <!-- JavaScript -->
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/components.js" defer></script>
@@ -425,44 +328,42 @@
     
     <script>
         // Counter animation for stats
-        document.addEventListener('DOMContentLoaded', function() {
-            function animateCounter() {
-                const counters = document.querySelectorAll('[data-count]');
+        function animateCounter() {
+            const counters = document.querySelectorAll('[data-count]');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const increment = target / 100;
+                let current = 0;
                 
-                counters.forEach(counter => {
-                    const target = parseInt(counter.getAttribute('data-count'));
-                    const increment = target / 100;
-                    let current = 0;
-                    
-                    const updateCounter = () => {
-                        if (current < target) {
-                            current += increment;
-                            counter.textContent = Math.ceil(current) + (counter.textContent.includes('%') ? '%' : '');
-                            setTimeout(updateCounter, 20);
-                        } else {
-                            counter.textContent = target + (counter.textContent.includes('%') ? '%' : '+');
-                        }
-                    };
-                    
-                    updateCounter();
-                });
-            }
-            
-            // Trigger counter animation when stats section is in view
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter();
-                        statsObserver.unobserve(entry.target);
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current) + (counter.textContent.includes('%') ? '%' : '');
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.textContent = target + (counter.textContent.includes('%') ? '%' : '+');
                     }
-                });
-            }, { threshold: 0.5 });
-            
-            const statsSection = document.querySelector('.section .grid-4');
-            if (statsSection) {
-                statsObserver.observe(statsSection);
-            }
-        });
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // Trigger counter animation when stats section is in view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.querySelector('#stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
     </script>
 </body>
 </html>
