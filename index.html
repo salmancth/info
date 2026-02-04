@@ -1,472 +1,1137 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Salman Yahya - Automation Engineer | IT Support Specialist | .NET Developer. Professional portfolio showcasing skills, experience, and projects.">
-    <meta name="keywords" content="Automation, Embedded Systems, Developer, Engineer, Portfolio, Programming, IT Support">
-    <meta name="author" content="Salman Yahya">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://salmancth.github.io/info/">
-    <meta property="og:title" content="Salman Yahya - Automation & IT Professional">
-    <meta property="og:description" content="Professional portfolio showcasing skills in automation, embedded systems, and software development.">
-    <meta property="og:image" content="https://salmancth.github.io/info/assets/img/profile.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://salmancth.github.io/info/">
-    <meta property="twitter:title" content="Salman Yahya - Automation & IT Professional">
-    <meta property="twitter:description" content="Professional portfolio showcasing skills in automation, embedded systems, and software development.">
-    <meta property="twitter:image" content="https://salmancth.github.io/info/assets/img/profile.jpg">
-    
-    <title>Salman Yahya - Automation & IT Professional</title>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
+    <title>Salman Yahya | Automation Engineer & Software Developer</title>
+    <meta name="description" content="Automation Engineer specializing in PLC programming, SCADA systems, robotics, and full-stack development with C# and Python.">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@300;400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
-</head>
-<body class="bg-gray-50 text-gray-700">
-    
-    <!-- Header (Will be loaded by JavaScript) -->
-    <div id="header"></div>
+    <style>
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #151934;
+            --bg-card: #1a1f3a;
+            --accent-primary: #00d4ff;
+            --accent-secondary: #7c3aed;
+            --accent-tertiary: #f59e0b;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #2d3748;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            --gradient-3: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
 
-    <!-- Hero Section -->
-    <header id="home" class="hero">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 50%, var(--accent-primary) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, var(--accent-secondary) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, var(--accent-tertiary) 0%, transparent 50%);
+            animation: bgMove 20s ease-in-out infinite;
+        }
+
+        @keyframes bgMove {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-50px, 50px) rotate(5deg); }
+            66% { transform: translate(50px, -50px) rotate(-5deg); }
+        }
+
+        /* Grid overlay */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 100px 100px;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Main container */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-text .name-highlight {
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gradient-2);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-primary);
+            border: 2px solid var(--accent-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 0.8s ease-out 0.4s backwards;
+        }
+
+        .profile-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-border {
+            position: absolute;
+            inset: -15px;
+            background: var(--gradient-2);
+            border-radius: 25px;
+            z-index: 1;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .tech-badge {
+            position: absolute;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-primary);
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .tech-badge:nth-child(1) {
+            top: -20px;
+            left: -50px;
+            animation-delay: 0s;
+        }
+
+        .tech-badge:nth-child(2) {
+            top: 100px;
+            right: -80px;
+            animation-delay: 1s;
+        }
+
+        .tech-badge:nth-child(3) {
+            bottom: 50px;
+            left: -70px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Section styles */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+        }
+
+        .skill-category h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.3rem;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category h3::before {
+            content: '▸';
+            color: var(--accent-tertiary);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient-2);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 0 4px var(--accent-secondary);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .company {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            margin-left: 1rem;
+        }
+
+        .timeline-item li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-item li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-tertiary);
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .education-card:hover {
+            border-color: var(--accent-secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.1);
+        }
+
+        .education-card h3 {
+            font-size: 1.4rem;
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .institution {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .course-list {
+            margin-top: 1rem;
+        }
+
+        .course-list h4 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent-tertiary);
+            margin-bottom: 0.5rem;
+        }
+
+        .course-list ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .course-list li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .course-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent-primary);
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .contact-link .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .contact-link .label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .contact-link .value {
+            font-size: 1.1rem;
+        }
+
+        .contact-visual {
+            position: relative;
+            height: 400px;
+        }
+
+        .code-window {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .code-window .window-header {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .code-window .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .code-window .dot:nth-child(1) { background: #ff5f56; }
+        .code-window .dot:nth-child(2) { background: #ffbd2e; }
+        .code-window .dot:nth-child(3) { background: #27c93f; }
+
+        .code-line {
+            color: var(--text-secondary);
+        }
+
+        .code-line .keyword { color: #ff79c6; }
+        .code-line .function { color: var(--accent-primary); }
+        .code-line .string { color: #50fa7b; }
+        .code-line .comment { color: var(--text-muted); }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .profile-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-list ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="grid-overlay"></div>
+
+    <header>
         <div class="container">
-            <div class="hero-content">
-                <p class="hero-subtitle" data-translate="hero.subtitle">Hello, I'm</p>
-                <h1 class="hero-title">SALMAN YAHYA</h1>
-                <p class="hero-description" data-translate="hero.title">Automation Engineer | IT Support Specialist | .NET Developer</p>
-                
-                <div class="hero-actions">
-                    <a href="#projects" class="btn" data-translate="hero.ctaProjects">
-                        <i class="fas fa-rocket"></i>
-                        View Projects
-                    </a>
-                    <a href="#contact" class="btn btn-outline" data-translate="hero.ctaContact">
-                        <i class="fas fa-envelope"></i>
-                        Contact Me
-                    </a>
-                </div>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="50">0+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="5">0+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="100">100%</div>
-                        <div class="stat-label">Client Satisfaction</div>
-                    </div>
-                </div>
-            </div>
+            <nav>
+                <div class="logo">&lt;SY /&gt;</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        
-        <a href="#about" class="scroll-indicator">
-            <i class="fas fa-chevron-down animate-float"></i>
-        </a>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- About Preview Section -->
-        <section id="about" class="section section-bg">
+        <!-- Hero Section -->
+        <section class="hero" id="about">
             <div class="container">
-                <div class="section-title">
-                    <h2 data-translate="about.title">About Me</h2>
-                    <p class="section-subtitle" data-translate="about.subtitle">Get to know me better</p>
-                </div>
-                
-                <div class="grid grid-2">
-                    <div class="about-image reveal animate-slide-left">
-                        <img src="assets/img/profile.jpg" alt="Salman Yahya" class="profile-img">
-                        <div class="about-badge">
-                            <i class="fas fa-award"></i>
-                            <span data-translate="about.statusText">Open to Opportunities</span>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Hello, I'm <span class="name-highlight">Salman Yahya</span></h1>
+                        <h2>Automation Engineer | Software Developer</h2>
+                        <p>
+                            Structured and solution-oriented engineer with expertise in PLC programming, 
+                            SCADA systems, robotics, and full-stack development. I build robust automation 
+                            solutions and software systems that bridge hardware and technology.
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                            <a href="https://linkedin.com/in/salman-yahya/" target="_blank" class="btn btn-secondary">LinkedIn</a>
                         </div>
                     </div>
-                    
-                    <div class="about-content reveal animate-slide-right">
-                        <h3>Technically Driven Engineer & Developer</h3>
-                        <p data-translate="about.bio">I'm a detail-oriented engineer with strong passion for programming, automation, and troubleshooting. I thrive in challenging environments where I can apply my expertise to create innovative solutions.</p>
-                        
-                        <div class="about-details">
-                            <div class="detail-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <strong data-translate="about.location">Location</strong>
-                                    <span>Västra Frölunda, Sweden</span>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <strong data-translate="about.email">Email</strong>
-                                    <a href="mailto:salmanyahya@outlook.com">salmanyahya@outlook.com</a>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-briefcase"></i>
-                                <div>
-                                    <strong data-translate="about.status">Status</strong>
-                                    <span data-translate="about.statusText">Open to Opportunities</span>
-                                </div>
-                            </div>
+                    <div class="hero-image">
+                        <div class="profile-container">
+                            <div class="profile-border"></div>
+                            <img src="profile.jpg" alt="Salman Yahya" class="profile-img">
+                            <div class="tech-badge">PLC & SCADA</div>
+                            <div class="tech-badge">C# | Python</div>
+                            <div class="tech-badge">Robotics</div>
                         </div>
-                        
-                        <a href="about.html" class="btn" data-translate="about.readFullBio">
-                            <i class="fas fa-user"></i>
-                            Read Full Bio
-                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Preview -->
-        <section id="experience" class="section">
+        <!-- Skills Section -->
+        <section id="skills">
             <div class="container">
-                <div class="section-title">
-                    <h2 data-translate="experience.title">Experience</h2>
-                    <p class="section-subtitle" data-translate="experience.subtitle">My professional journey</p>
+                <h2 class="section-title fade-in">Technical Arsenal</h2>
+                <p class="section-subtitle fade-in">Technologies & Expertise</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-category fade-in">
+                        <h3>Automation & Robotics</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PLC Programming</span>
+                            <span class="skill-tag">Siemens TIA Portal</span>
+                            <span class="skill-tag">WAGO</span>
+                            <span class="skill-tag">Codesys</span>
+                            <span class="skill-tag">SCADA (AVEVA)</span>
+                            <span class="skill-tag">HMI Development</span>
+                            <span class="skill-tag">Robot Programming</span>
+                            <span class="skill-tag">Robot Simulation</span>
+                            <span class="skill-tag">Industrial Automation</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category fade-in">
+                        <h3>Software Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C# / .NET</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Blazor</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">PowerShell</span>
+                            <span class="skill-tag">C/C++</span>
+                            <span class="skill-tag">API Development</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category fade-in">
+                        <h3>Engineering & Design</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Electrical Design</span>
+                            <span class="skill-tag">ElCad</span>
+                            <span class="skill-tag">MATLAB</span>
+                            <span class="skill-tag">Simulink</span>
+                            <span class="skill-tag">CST Studio Suite</span>
+                            <span class="skill-tag">Embedded Systems</span>
+                            <span class="skill-tag">RF & Sensors</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category fade-in">
+                        <h3>DevOps & Infrastructure</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Windows Server</span>
+                            <span class="skill-tag">Azure</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Virtualization</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category fade-in">
+                        <h3>IT & Systems</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Microsoft 365</span>
+                            <span class="skill-tag">Microsoft Entra</span>
+                            <span class="skill-tag">Active Directory</span>
+                            <span class="skill-tag">Network Configuration</span>
+                            <span class="skill-tag">TCP/IP</span>
+                            <span class="skill-tag">System Administration</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category fade-in">
+                        <h3>Professional Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">System Optimization</span>
+                            <span class="skill-tag">Testing & QA</span>
+                            <span class="skill-tag">Documentation</span>
+                            <span class="skill-tag">Client Relations</span>
+                            <span class="skill-tag">Technical Support</span>
+                            <span class="skill-tag">Project Management</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-title fade-in">Professional Journey</h2>
+                <p class="section-subtitle fade-in">Experience & Projects</p>
                 
                 <div class="timeline">
-                    <!-- Experience Item 1 -->
-                    <div class="timeline-item reveal">
-                        <div class="timeline-date">Jan 2025 - Apr 2025</div>
-                        <div class="timeline-content">
-                            <h3>Automation Technician</h3>
-                            <p class="text-primary">CATC AB</p>
-                            <p>Worked on industrial automation systems and PLC programming with focus on efficiency and reliability.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">PLC</span>
-                                <span class="tech-tag">CODESYS</span>
-                                <span class="tech-tag">Industrial Automation</span>
-                            </div>
-                        </div>
+                    <div class="timeline-item fade-in">
+                        <h3>Automation Engineer (Consultant)</h3>
+                        <p class="company">Academic Work AB, Göteborg</p>
+                        <p class="date">January 2025 – May 2025</p>
+                        <ul>
+                            <li>Developed automation solutions with WAGO PLC using Codesys</li>
+                            <li>Designed and integrated SCADA systems in AVEVA</li>
+                            <li>Built custom C# embedded applications for control systems</li>
+                            <li>Created electrical schematics and technical documentation</li>
+                            <li>Performed on-site installation, testing, and commissioning</li>
+                            <li>Implemented CI/CD pipelines for development efficiency</li>
+                            <li>Developed full-stack solutions in C#/.NET with Blazor and SQL</li>
+                        </ul>
                     </div>
-                    
-                    <!-- Experience Item 2 -->
-                    <div class="timeline-item reveal">
-                        <div class="timeline-date">Mar 2023 - Jun 2024</div>
-                        <div class="timeline-content">
-                            <h3>IT Support Technician</h3>
-                            <p class="text-primary">Consultant @ Toyota Material Handling</p>
-                            <p>Provided technical support and network configuration in enterprise environment.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">IT Support</span>
-                                <span class="tech-tag">Network</span>
-                                <span class="tech-tag">System Admin</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Experience Item 3 -->
-                    <div class="timeline-item reveal">
-                        <div class="timeline-date">Jan 2023 - Jun 2023</div>
-                        <div class="timeline-content">
-                            <h3>System Developer</h3>
-                            <p class="text-primary">Chalmers University of Technology</p>
-                            <p>Developed systems and applications for university projects using modern technologies.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">C#</span>
-                                <span class="tech-tag">.NET</span>
-                                <span class="tech-tag">Blazor</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-8">
-                    <a href="experience.html" class="btn">
-                        <i class="fas fa-briefcase"></i>
-                        View Full Experience
-                    </a>
-                </div>
-            </div>
-        </section>
 
-        <!-- Education Preview -->
-        <section id="education" class="section section-bg">
-            <div class="container">
-                <div class="section-title">
-                    <h2 data-translate="education.title">Education</h2>
-                    <p class="section-subtitle" data-translate="education.subtitle">My academic background</p>
-                </div>
-                
-                <div class="grid grid-2">
-                    <div class="card reveal">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-university"></i>
-                            </div>
-                            <div>
-                                <h3 class="card-title">Master of Science</h3>
-                                <p class="card-subtitle">Communication Technology</p>
-                            </div>
-                        </div>
-                        <p>Chalmers University of Technology | 2021 - 2023</p>
-                        <p>Specialized in communication systems, signal processing, and network technologies.</p>
+                    <div class="timeline-item fade-in">
+                        <h3>Support Engineer (Consultant)</h3>
+                        <p class="company">Toyota Material Handling, Göteborg (via Tech Talent)</p>
+                        <p class="date">March 2023 – September 2024</p>
+                        <ul>
+                            <li>Enhanced system reliability through cross-functional collaboration</li>
+                            <li>Expertise in Microsoft 365, Microsoft Entra, Active Directory</li>
+                            <li>Developed automation solutions using PowerShell</li>
+                            <li>Managed licenses, hardware, and vendor relationships (Microsoft, Dell, Lenovo)</li>
+                            <li>Created comprehensive documentation and user guides</li>
+                            <li>Integrated Docker, VM, and WSL in development environments</li>
+                        </ul>
                     </div>
-                    
-                    <div class="card reveal">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div>
-                                <h3 class="card-title">Master of Science</h3>
-                                <p class="card-subtitle">Robotics and Automation</p>
-                            </div>
-                        </div>
-                        <p>University West | 2020 - 2021</p>
-                        <p>Focused on robotics systems, automation control, and industrial applications.</p>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-8">
-                    <a href="education.html" class="btn">
-                        <i class="fas fa-graduation-cap"></i>
-                        View Full Education
-                    </a>
-                </div>
-            </div>
-        </section>
 
-        <!-- Skills Preview -->
-        <section id="skills" class="section">
-            <div class="container">
-                <div class="section-title">
-                    <h2 data-translate="skills.title">Technical Skills</h2>
-                    <p class="section-subtitle" data-translate="skills.subtitle">Programming languages & tools</p>
-                </div>
-                
-                <div class="skills-preview">
-                    <div class="skill-category">
-                        <h3 data-translate="skills.programming">Programming Languages</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">MATLAB/SIMULINK</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">C# / .NET</span>
-                            <span class="skill-tag">Blazor</span>
-                            <span class="skill-tag">PLC / CODESYS</span>
-                            <span class="skill-tag">PowerShell</span>
-                        </div>
+                    <div class="timeline-item fade-in">
+                        <h3>Thesis Project – RF & Sensor Systems</h3>
+                        <p class="company">Gapwaves AB, Göteborg</p>
+                        <p class="date">January 2023 – May 2023</p>
+                        <ul>
+                            <li>Designed microstrip-to-gap waveguide for 77 GHz automotive radar</li>
+                            <li>Performed electromagnetic simulations in CST Studio Suite</li>
+                            <li>Analyzed and optimized high-frequency system implementations</li>
+                        </ul>
                     </div>
-                    
-                    <div class="skill-category">
-                        <h3 data-translate="skills.tools">Tools & Technologies</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">CST Studio Suite</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Linux</span>
-                            <span class="skill-tag">HTML/CSS</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-8">
-                    <a href="skills.html" class="btn">
-                        <i class="fas fa-code"></i>
-                        View All Skills
-                    </a>
-                </div>
-            </div>
-        </section>
 
-        <!-- Projects Preview -->
-        <section id="projects" class="section section-bg">
-            <div class="container">
-                <div class="section-title">
-                    <h2 data-translate="projects.title">Featured Projects</h2>
-                    <p class="section-subtitle" data-translate="projects.subtitle">Some of my recent work</p>
-                </div>
-                
-                <div class="grid grid-2">
-                    <div class="card reveal">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-dna"></i>
-                            </div>
-                            <div>
-                                <h3 class="card-title">Bioinformatics Pipeline</h3>
-                                <p class="card-subtitle">Chalmers University of Technology</p>
-                            </div>
-                        </div>
-                        <p>Developed a pipeline for extracting biomedical data from scientific publications using C#, Blazor and Entity Framework.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">.NET</span>
-                            <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                        <a href="projects.html" class="btn btn-sm">
-                            <span data-translate="projects.viewDetails">View Details</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                    <div class="timeline-item fade-in">
+                        <h3>Full Stack Developer</h3>
+                        <p class="company">Chalmers University of Technology, Göteborg</p>
+                        <p class="date">July 2022 – December 2023</p>
+                        <ul>
+                            <li>Developed bioinformatics pipeline for data processing</li>
+                            <li>Built backend in C# and Blazor</li>
+                            <li>Created dynamic web interfaces in JavaScript and PHP</li>
+                            <li>Deployed and maintained solutions on AWS</li>
+                        </ul>
                     </div>
-                    
-                    <div class="card reveal">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-car"></i>
-                            </div>
-                            <div>
-                                <h3 class="card-title">Vehicle Radar System</h3>
-                                <p class="card-subtitle">Gapwaves AB (Thesis Project)</p>
-                            </div>
-                        </div>
-                        <p>Designed and simulated 77 GHz automotive radar components using CST Studio Suite with gap waveguide technology.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">CST Studio</span>
-                            <span class="tech-tag">MATLAB</span>
-                            <span class="tech-tag">RF Design</span>
-                        </div>
-                        <a href="projects.html" class="btn btn-sm">
-                            <span data-translate="projects.viewDetails">View Details</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-8">
-                    <a href="projects.html" class="btn">
-                        <i class="fas fa-project-diagram"></i>
-                        <span data-translate="projects.viewAll">View All Projects</span>
-                    </a>
-                </div>
-            </div>
-        </section>
 
-        <!-- Quick Stats -->
-        <section class="section">
-            <div class="container">
-                <div class="grid grid-4">
-                    <div class="stat-card text-center">
-                        <div class="stat-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="stat-number" data-count="10">0+</div>
-                        <div class="stat-label">Programming Languages</div>
-                    </div>
-                    <div class="stat-card text-center">
-                        <div class="stat-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <div class="stat-number" data-count="50">0+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-card text-center">
-                        <div class="stat-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="stat-number" data-count="4">0</div>
-                        <div class="stat-label">Degrees</div>
-                    </div>
-                    <div class="stat-card text-center">
-                        <div class="stat-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="stat-number" data-count="8">0+</div>
-                        <div class="stat-label">Certifications</div>
+                    <div class="timeline-item fade-in">
+                        <h3>IT & Network Consultant (Freelance)</h3>
+                        <p class="company">Göteborg</p>
+                        <p class="date">February 2016 – February 2020</p>
+                        <ul>
+                            <li>Developed custom system solutions in JavaScript and Python</li>
+                            <li>Delivered IT infrastructure projects focused on cloud and security</li>
+                            <li>Managed licenses, procurement, and technical documentation</li>
+                            <li>Configured and troubleshot networks (TCP/IP, DNS, DHCP)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Call to Action -->
-        <section id="contact" class="section">
+        <!-- Education Section -->
+        <section id="education">
             <div class="container">
-                <div class="cta-card">
-                    <h2 data-translate="contact.title">Let's Work Together</h2>
-                    <p class="cta-text" data-translate="contact.text">I'm currently available for freelance work and full-time opportunities. Let's discuss how I can contribute to your team.</p>
-                    <div class="cta-actions">
-                        <a href="mailto:salmanyahya@outlook.com" class="btn btn-lg" data-translate="contact.sendMessage">
-                            <i class="fas fa-envelope"></i>
-                            Send Message
-                        </a>
-                        <a href="tel:+46701234567" class="btn btn-lg btn-outline">
-                            <i class="fas fa-phone"></i>
-                            Call Now
-                        </a>
+                <h2 class="section-title fade-in">Academic Background</h2>
+                <p class="section-subtitle fade-in">Education & Certifications</p>
+                
+                <div class="education-grid">
+                    <div class="education-card fade-in">
+                        <h3>Master's Degree in Robotics & Automation</h3>
+                        <p class="institution">University West, Trollhättan</p>
+                        <p class="year">2024 – 2025</p>
+                        <p>Focus on industrial robotics, automation, simulation, Industry 4.0, and smart factories.</p>
+                        <div class="course-list">
+                            <h4>Key Courses:</h4>
+                            <ul>
+                                <li>Robot Simulation</li>
+                                <li>Automated Production Simulation</li>
+                                <li>Automation Systems</li>
+                                <li>Robot Systems</li>
+                                <li>Scientific Methods in Robotics</li>
+                                <li>Robot Modeling</li>
+                                <li>Mechatronics for Automation</li>
+                                <li>Robot Certification</li>
+                                <li>Programming for Automation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="education-card fade-in">
+                        <h3>Master's in Communication Engineering</h3>
+                        <p class="institution">Chalmers University of Technology, Göteborg</p>
+                        <p class="year">1 Year Completed</p>
+                        <p>Advanced studies in communication systems, signal processing, and RF engineering.</p>
+                    </div>
+
+                    <div class="education-card fade-in">
+                        <h3>Full Stack Developer – C#.NET</h3>
+                        <p class="institution">Lexicon, Göteborg</p>
+                        <p class="year">2022</p>
+                        <p>Vocational training in full-stack development with focus on C#, .NET framework, and modern web technologies.</p>
+                    </div>
+
+                    <div class="education-card fade-in">
+                        <h3>Bachelor's in Electrical & Electronics Engineering</h3>
+                        <p class="institution">International University CTG</p>
+                        <p class="year">4 Years</p>
+                        <p>Comprehensive foundation in electrical systems, electronics, and engineering principles.</p>
+                    </div>
+
+                    <div class="education-card fade-in">
+                        <h3>Additional Training</h3>
+                        <p class="institution">Various Institutions</p>
+                        <p class="year">2024 – 2025</p>
+                        <div class="course-list">
+                            <ul>
+                                <li>Embedded Systems</li>
+                                <li>Technical University</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title fade-in">Let's Connect</h2>
+                <p class="section-subtitle fade-in">Get in touch for opportunities</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-info fade-in">
+                        <h3>Ready to collaborate?</h3>
+                        <p>
+                            I'm always interested in new opportunities, challenging projects, 
+                            and meaningful collaborations. Whether you're looking for an automation 
+                            engineer, software developer, or technical consultant, let's talk.
+                        </p>
+                        <div class="contact-links">
+                            <a href="mailto:salman.yahya.soc@outlook.com" class="contact-link">
+                                <div class="icon">✉</div>
+                                <div>
+                                    <div class="label">Email</div>
+                                    <div class="value">salman.yahya.soc@outlook.com</div>
+                                </div>
+                            </a>
+                            <a href="tel:+46761883683" class="contact-link">
+                                <div class="icon">☎</div>
+                                <div>
+                                    <div class="label">Phone</div>
+                                    <div class="value">+46 76 188 36 83</div>
+                                </div>
+                            </a>
+                            <a href="https://linkedin.com/in/salman-yahya/" target="_blank" class="contact-link">
+                                <div class="icon">in</div>
+                                <div>
+                                    <div class="label">LinkedIn</div>
+                                    <div class="value">linkedin.com/in/salman-yahya</div>
+                                </div>
+                            </a>
+                            <a href="https://salmancth.github.io/info" target="_blank" class="contact-link">
+                                <div class="icon">🌐</div>
+                                <div>
+                                    <div class="label">Portfolio</div>
+                                    <div class="value">salmancth.github.io/info</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-visual fade-in">
+                        <div class="code-window">
+                            <div class="window-header">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="code-content">
+                                <div class="code-line"><span class="keyword">class</span> <span class="function">SalmanYahya</span> {</div>
+                                <div class="code-line">  <span class="keyword">constructor</span>() {</div>
+                                <div class="code-line">    <span class="keyword">this</span>.name = <span class="string">"Salman Yahya"</span>;</div>
+                                <div class="code-line">    <span class="keyword">this</span>.role = <span class="string">"Automation Engineer"</span>;</div>
+                                <div class="code-line">    <span class="keyword">this</span>.location = <span class="string">"Göteborg, Sweden"</span>;</div>
+                                <div class="code-line">    <span class="keyword">this</span>.skills = [</div>
+                                <div class="code-line">      <span class="string">"PLC Programming"</span>,</div>
+                                <div class="code-line">      <span class="string">"SCADA Systems"</span>,</div>
+                                <div class="code-line">      <span class="string">"C# Development"</span>,</div>
+                                <div class="code-line">      <span class="string">"Python"</span>,</div>
+                                <div class="code-line">      <span class="string">"Robotics"</span></div>
+                                <div class="code-line">    ];</div>
+                                <div class="code-line">  }</div>
+                                <div class="code-line">  </div>
+                                <div class="code-line">  <span class="function">contact</span>() {</div>
+                                <div class="code-line">    <span class="comment">// Let's build something amazing!</span></div>
+                                <div class="code-line">    <span class="keyword">return</span> <span class="string">"salman.yahya.soc@outlook.com"</span>;</div>
+                                <div class="code-line">  }</div>
+                                <div class="code-line">}</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer (Will be loaded by JavaScript) -->
-    <div id="footer"></div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Salman Yahya. All rights reserved. | Built with precision and passion.</p>
+        </div>
+    </footer>
 
-    <!-- JavaScript -->
-    <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/components.js" defer></script>
-    <script src="assets/js/translations.js" defer></script>
-    <script src="assets/js/scripts.js" defer></script>
-    <script src="assets/js/gallery.js" defer></script>
-
-
-    
     <script>
-        // Counter animation for stats
-        document.addEventListener('DOMContentLoaded', function() {
-            function animateCounter() {
-                const counters = document.querySelectorAll('[data-count]');
-                
-                counters.forEach(counter => {
-                    const target = parseInt(counter.getAttribute('data-count'));
-                    const increment = target / 100;
-                    let current = 0;
-                    
-                    const updateCounter = () => {
-                        if (current < target) {
-                            current += increment;
-                            counter.textContent = Math.ceil(current) + (counter.textContent.includes('%') ? '%' : '');
-                            setTimeout(updateCounter, 20);
-                        } else {
-                            counter.textContent = target + (counter.textContent.includes('%') ? '%' : '+');
-                        }
-                    };
-                    
-                    updateCounter();
-                });
-            }
-            
-            // Trigger counter animation when stats section is in view
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter();
-                        statsObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            const statsSection = document.querySelector('.section .grid-4');
-            if (statsSection) {
-                statsObserver.observe(statsSection);
-            }
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
